@@ -41,9 +41,9 @@ public class PassengerController {
 	}
 
 	@GetMapping("/passenger/find/{passengerId}")
-	public ResponseEntity<Object> fetchById(@PathVariable("passengerId") int passengerId) {
+	public ResponseEntity<Passenger> fetchById(@PathVariable("passengerId") int passengerId) {
 
-		ResponseEntity<Object> reponseEntity = null;
+		ResponseEntity<Passenger> reponseEntity = null;
 		Passenger passenger = passengerService.getPassengerById(passengerId);
 		reponseEntity = new ResponseEntity<>(passenger, HttpStatus.OK);
 		return reponseEntity;
